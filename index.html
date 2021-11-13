@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+    <head></head>
+    <body>
+        <div id="app"/>
+        <script src="./builder.js"></script>
+        <script type="text/javascript">
+            div()
+                .style('border: solid 1px black; padding: 5px; background-color: gray')
+                .with(
+                    div().text('Items:'),
+                    ul().with(
+                        li().text('item 1'),
+                        li().text('item 2'),
+                        li().text('item 3'),
+                        li().text('item 4'),
+                        li().text('item 5'),
+                    ),
+                    div().style('font-weight: bold').text('Summary:'),
+                    div().text('There are 5 items in the list'),
+                    button().text('Remove item').event('click', () => {
+                        alert('Clicked button');
+                    }),
+                ).mountTo('app');
+        </script>
+    </body>
+</html>
